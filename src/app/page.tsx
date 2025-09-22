@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Download, ChevronDown, ArrowRight, ArrowDown, Zap, AlertTriangle, MessageCircle, Settings, Brain, Copy, Check } from 'lucide-react';
 import Image from 'next/image';
+import { getAssetPath } from '@/utils/basePath';
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -187,7 +188,7 @@ export default function Home() {
               <a href="https://pradyumnashome.com" target="_blank" className="block">
                 <div className="w-40 h-40 bg-gradient-to-br from-cyan-500 to-purple-500 rounded-full mx-auto mb-4 p-1 group-hover:scale-105 transition-transform duration-300">
                   <Image 
-                    src="/pradyumna-shome.webp" 
+                    src={getAssetPath("/pradyumna-shome.webp")} 
                     alt="Pradyumna Shome"
                     width={160}
                     height={160}
@@ -202,7 +203,7 @@ export default function Home() {
               <a href="https://www.linkedin.com/in/sashreek-krishnan/" target="_blank" className="block">
                 <div className="w-40 h-40 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full mx-auto mb-4 p-1 group-hover:scale-105 transition-transform duration-300">
                   <Image 
-                    src="/sashreek-krishnan.jpeg" 
+                    src={getAssetPath("/sashreek-krishnan.jpeg")} 
                     alt="Sashreek Krishnan"
                     width={160}
                     height={160}
@@ -217,7 +218,7 @@ export default function Home() {
               <a href="https://sauvikdas.com" target="_blank" className="block">
                 <div className="w-40 h-40 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full mx-auto mb-4 p-1 group-hover:scale-105 transition-transform duration-300">
                   <Image 
-                    src="/sauvik-das.png" 
+                    src={getAssetPath("/sauvik-das.png")} 
                     alt="Sauvik Das"
                     width={160}
                     height={160}
