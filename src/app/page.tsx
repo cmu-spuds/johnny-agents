@@ -101,7 +101,7 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-xl border-b border-white/10">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="#hero" className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
-            Why Johnny Can't Use Agents
+            Why Johnny Can&apos;t Use Agents
           </a>
           <div className="flex items-center gap-6">
             <a href="#team" className="hover:text-cyan-400 transition-colors">Team</a>
@@ -124,7 +124,7 @@ export default function Home() {
                 Why Johnny
               </span>
               <br />
-              <span className="text-lime-400">Can't Use</span>
+              <span className="text-lime-400">Can&apos;t Use</span>
               <br />
               <span className="bg-gradient-to-r from-pink-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent animate-gradient-x">
                 Agents
@@ -360,7 +360,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="text-white font-semibold mb-1">Generally Successful</h4>
-                    <p className="text-gray-300 text-sm">Users completed tasks with "Good" to "Excellent" usability ratings</p>
+                    <p className="text-gray-300 text-sm">Users completed tasks with &ldquo;Good&rdquo; to &ldquo;Excellent&rdquo; usability ratings</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -409,9 +409,9 @@ export default function Home() {
                       <div className="w-24 text-sm text-cyan-400 font-semibold">Manus</div>
                       <div className="flex-1 relative">
                         <div className="w-full bg-gray-700 rounded-full h-4">
-                          <div className="bg-gradient-to-r from-cyan-400 to-cyan-500 h-4 rounded-full" style={{width: '84.2%'}}></div>
+                          <div className="bg-gradient-to-r from-cyan-400 to-cyan-500 h-4 rounded-full" style={{width: '78%'}}></div>
                         </div>
-                        <span className="absolute right-0 -top-7 text-sm font-bold text-cyan-400">84.2</span>
+                        <span className="absolute right-0 -top-7 text-sm font-bold text-cyan-400">78</span>
                       </div>
                     </div>
                   </div>
@@ -428,18 +428,18 @@ export default function Home() {
                       <div className="w-24 text-sm text-orange-400 font-semibold">Operator</div>
                       <div className="flex-1 relative">
                         <div className="w-full bg-gray-700 rounded-full h-4">
-                          <div className="bg-gradient-to-r from-orange-400 to-orange-500 h-4 rounded-full" style={{width: '69.8%'}}></div>
+                          <div className="bg-gradient-to-r from-orange-400 to-orange-500 h-4 rounded-full" style={{width: '84.2%'}}></div>
                         </div>
-                        <span className="absolute right-0 -top-7 text-sm font-bold text-orange-400">69.8</span>
+                        <span className="absolute right-0 -top-7 text-sm font-bold text-orange-400">84.2</span>
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
                       <div className="w-24 text-sm text-cyan-400 font-semibold">Manus</div>
                       <div className="flex-1 relative">
                         <div className="w-full bg-gray-700 rounded-full h-4">
-                          <div className="bg-gradient-to-r from-cyan-400 to-cyan-500 h-4 rounded-full" style={{width: '78.0%'}}></div>
+                          <div className="bg-gradient-to-r from-cyan-400 to-cyan-500 h-4 rounded-full" style={{width: '71.2%'}}></div>
                         </div>
-                        <span className="absolute right-0 -top-7 text-sm font-bold text-cyan-400">78.0</span>
+                        <span className="absolute right-0 -top-7 text-sm font-bold text-cyan-400">71.2</span>
                       </div>
                     </div>
                   </div>
@@ -456,9 +456,9 @@ export default function Home() {
                       <div className="w-24 text-sm text-orange-400 font-semibold">Operator</div>
                       <div className="flex-1 relative">
                         <div className="w-full bg-gray-700 rounded-full h-4">
-                          <div className="bg-gradient-to-r from-orange-400 to-orange-500 h-4 rounded-full" style={{width: '71.2%'}}></div>
+                          <div className="bg-gradient-to-r from-orange-400 to-orange-500 h-4 rounded-full" style={{width: '69.8%'}}></div>
                         </div>
-                        <span className="absolute right-0 -top-7 text-sm font-bold text-orange-400">71.2</span>
+                        <span className="absolute right-0 -top-7 text-sm font-bold text-orange-400">69.8</span>
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
@@ -588,7 +588,7 @@ export default function Home() {
                       <div className="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center">
                         <span className="text-white text-sm font-bold">5</span>
                       </div>
-                      <h4 className="text-white font-semibold">Show, Don't Tell</h4>
+                      <h4 className="text-white font-semibold">Show, Don&apos;t Tell</h4>
                     </div>
                     <p className="text-gray-300 text-sm">Support multiple input modalities beyond text prompts</p>
                   </div>
@@ -600,7 +600,7 @@ export default function Home() {
                       <div className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center">
                         <span className="text-white text-sm font-bold">6</span>
                       </div>
-                      <h4 className="text-white font-semibold">Next Time's the Charm</h4>
+                      <h4 className="text-white font-semibold">Next Time&apos;s the Charm</h4>
                     </div>
                     <p className="text-gray-300 text-sm">Enable precise iteration on outputs with contextual controls</p>
                   </div>
