@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Download, Users, BookOpen, Code, ChevronDown, ArrowRight, ArrowDown, Circle, Zap, AlertTriangle, MessageCircle, Settings, Brain, Copy, Check } from 'lucide-react';
+import { Download, ChevronDown, ArrowRight, ArrowDown, Zap, AlertTriangle, MessageCircle, Settings, Brain, Copy, Check } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
-  const [activeSection, setActiveSection] = useState('hero');
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ export default function Home() {
     {
       icon: <Brain className="w-6 h-6" />,
       title: "Misaligned Mental Models",
-      description: "Agent capabilities don't match user expectations",
+      description: "Agent capabilities don&apos;t match user expectations",
       color: "from-purple-500 to-pink-500"
     },
     {
@@ -47,7 +47,7 @@ export default function Home() {
     {
       icon: <Settings className="w-6 h-6" />,
       title: "Inflexible Collaboration",
-      description: "Rigid interaction styles that don't adapt",
+      description: "Rigid interaction styles that don&apos;t adapt",
       color: "from-blue-500 to-cyan-500"
     },
     {
@@ -186,9 +186,11 @@ export default function Home() {
             <div className="text-center group">
               <a href="https://pradyumnashome.com" target="_blank" className="block">
                 <div className="w-40 h-40 bg-gradient-to-br from-cyan-500 to-purple-500 rounded-full mx-auto mb-4 p-1 group-hover:scale-105 transition-transform duration-300">
-                  <img 
+                  <Image 
                     src="/pradyumna-shome.webp" 
                     alt="Pradyumna Shome"
+                    width={160}
+                    height={160}
                     className="w-full h-full rounded-full object-cover"
                   />
                 </div>
@@ -199,9 +201,11 @@ export default function Home() {
             <div className="text-center group">
               <a href="https://www.linkedin.com/in/sashreek-krishnan/" target="_blank" className="block">
                 <div className="w-40 h-40 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full mx-auto mb-4 p-1 group-hover:scale-105 transition-transform duration-300">
-                  <img 
+                  <Image 
                     src="/sashreek-krishnan.jpeg" 
                     alt="Sashreek Krishnan"
+                    width={160}
+                    height={160}
                     className="w-full h-full rounded-full object-cover"
                   />
                 </div>
@@ -212,9 +216,11 @@ export default function Home() {
             <div className="text-center group">
               <a href="https://sauvikdas.com" target="_blank" className="block">
                 <div className="w-40 h-40 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full mx-auto mb-4 p-1 group-hover:scale-105 transition-transform duration-300">
-                  <img 
+                  <Image 
                     src="/sauvik-das.png" 
                     alt="Sauvik Das"
+                    width={160}
+                    height={160}
                     className="w-full h-full rounded-full object-cover"
                   />
                 </div>
@@ -234,7 +240,7 @@ export default function Home() {
           </h2>
           <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-3xl p-8 backdrop-blur border border-white/10">
             <p className="text-lg leading-relaxed text-gray-300 mb-6">
-              There is growing imprecision about what “AI agents” are, what they can do, and how effectively they can be used by their intended users. We pose two key research questions: <strong className="text-white">(i) How does the tech industry conceive of and market "AI agents"?</strong> <strong className="text-white">(ii) What challenges do end-users face when attempting to use commercial AI agents for their advertised uses?</strong>
+              There is growing imprecision about what &ldquo;AI agents&rdquo; are, what they can do, and how effectively they can be used by their intended users. We pose two key research questions: <strong className="text-white">(i) How does the tech industry conceive of and market &ldquo;AI agents&rdquo;?</strong> <strong className="text-white">(ii) What challenges do end-users face when attempting to use commercial AI agents for their advertised uses?</strong>
             </p>
             <p className="text-lg leading-relaxed text-gray-300">
               We first performed a systematic review of marketed use cases for <strong className="text-cyan-400">102 commercial AI agents</strong>, finding that they fall into three umbrella categories: <strong className="text-purple-400">orchestration, creation, and insight</strong>. Next, we conducted a usability assessment where <strong className="text-pink-400">N = 31 participants</strong> attempted representative tasks for each of these categories on two popular commercial AI agent tools.
