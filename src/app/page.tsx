@@ -280,28 +280,28 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
-                <div className="text-center text-gray-400 mb-4">Overview of Research Process</div>
-                <div className="space-y-3">
+              <div className="bg-gradient-to-br from-white/15 to-white/10 rounded-2xl p-6 border border-white/20 shadow-2xl">
+                <div className="text-center text-white bg-clip-text text-transparent mb-6 font-bold text-lg">Overview of Research Process</div>
+                <div className="space-y-4">
                   {/* RQ1 Flow */}
-                  <div className="bg-green-500/20 rounded-lg p-2 text-center text-green-300 text-xs">RQ1: How does industry conceive AI agents?</div>
-                  <div className="flex justify-center"><ArrowDown className="w-3 h-3 text-gray-500" /></div>
-                  <div className="bg-blue-500/20 rounded-lg p-2 text-center text-blue-300 text-xs">Systematic Review (102 agents)</div>
-                  <div className="flex justify-center"><ArrowDown className="w-3 h-3 text-gray-500" /></div>
-                  <div className="bg-orange-500/20 rounded-lg p-2 text-center text-orange-300 text-xs">Taxonomy</div>
-                  <div className="flex justify-center"><ArrowDown className="w-3 h-3 text-gray-500" /></div>
-                  <div className="bg-orange-500/20 rounded-lg p-2 text-center text-orange-300 text-xs">Tasks</div>
+                  <div className="bg-gradient-to-r from-emerald-500/60 to-green-500/60 rounded-xl p-3 text-center text-white font-bold text-sm shadow-lg border border-emerald-400/30">RQ1: How does industry conceive AI agents?</div>
+                  <div className="flex justify-center"><ArrowDown className="w-4 h-4 text-gray-300" /></div>
+                  <div className="bg-gradient-to-r from-blue-500/60 to-indigo-500/60 rounded-xl p-3 text-center text-white font-bold text-sm shadow-lg border border-blue-400/30">Systematic Review (102 agents)</div>
+                  <div className="flex justify-center"><ArrowDown className="w-4 h-4 text-gray-300" /></div>
+                  <div className="bg-gradient-to-r from-amber-500/60 to-orange-500/60 rounded-xl p-3 text-center text-white font-bold text-sm shadow-lg border border-amber-400/30">Taxonomy</div>
+                  <div className="flex justify-center"><ArrowDown className="w-4 h-4 text-gray-300" /></div>
+                  <div className="bg-gradient-to-r from-amber-500/60 to-orange-500/60 rounded-xl p-3 text-center text-white font-bold text-sm shadow-lg border border-amber-400/30">Tasks</div>
                   
                   {/* RQ2 Flow */}
-                  <div className="bg-green-500/20 rounded-lg p-2 text-center text-green-300 text-xs mt-4">RQ2: What challenges do users face?</div>
-                  <div className="flex justify-center"><ArrowDown className="w-3 h-3 text-gray-500" /></div>
-                  <div className="bg-blue-500/20 rounded-lg p-2 text-center text-blue-300 text-xs">Think-Aloud Sessions (31 participants)</div>
-                  <div className="flex justify-center"><ArrowDown className="w-3 h-3 text-gray-500" /></div>
-                  <div className="bg-blue-500/20 rounded-lg p-2 text-center text-blue-300 text-xs">Semi-Structured Interviews</div>
-                  <div className="flex justify-center"><ArrowDown className="w-3 h-3 text-gray-500" /></div>
-                  <div className="bg-orange-500/20 rounded-lg p-2 text-center text-orange-300 text-xs">Usability Barriers</div>
-                  <div className="flex justify-center"><ArrowDown className="w-3 h-3 text-gray-500" /></div>
-                  <div className="bg-orange-500/20 rounded-lg p-2 text-center text-orange-300 text-xs">Design Implications</div>
+                  <div className="bg-gradient-to-r from-emerald-500/60 to-green-500/60 rounded-xl p-3 text-center text-white font-bold text-sm mt-6 shadow-lg border border-emerald-400/30">RQ2: What challenges do users face?</div>
+                  <div className="flex justify-center"><ArrowDown className="w-4 h-4 text-gray-300" /></div>
+                  <div className="bg-gradient-to-r from-blue-500/60 to-indigo-500/60 rounded-xl p-3 text-center text-white font-bold text-sm shadow-lg border border-blue-400/30">Think-Aloud Sessions (31 participants)</div>
+                  <div className="flex justify-center"><ArrowDown className="w-4 h-4 text-gray-300" /></div>
+                  <div className="bg-gradient-to-r from-blue-500/60 to-indigo-500/60 rounded-xl p-3 text-center text-white font-bold text-sm shadow-lg border border-blue-400/30">Semi-Structured Interviews</div>
+                  <div className="flex justify-center"><ArrowDown className="w-4 h-4 text-gray-300" /></div>
+                  <div className="bg-gradient-to-r from-amber-500/60 to-orange-500/60 rounded-xl p-3 text-center text-white font-bold text-sm shadow-lg border border-amber-400/30">Usability Barriers</div>
+                  <div className="flex justify-center"><ArrowDown className="w-4 h-4 text-gray-300" /></div>
+                  <div className="bg-gradient-to-r from-amber-500/60 to-orange-500/60 rounded-xl p-3 text-center text-white font-bold text-sm shadow-lg border border-amber-400/30">Design Implications</div>
                 </div>
               </div>
             </div>
