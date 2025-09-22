@@ -35,7 +35,7 @@ export default function Home() {
     {
       icon: <Brain className="w-6 h-6" />,
       title: "Misaligned Mental Models",
-      description: "Agent capabilities don&apos;t match user expectations",
+      description: "Agent capabilities don\'t match user expectations",
       color: "from-purple-500 to-pink-500"
     },
     {
@@ -47,7 +47,7 @@ export default function Home() {
     {
       icon: <Settings className="w-6 h-6" />,
       title: "Inflexible Collaboration",
-      description: "Rigid interaction styles that don&apos;t adapt",
+      description: "Rigid interaction styles that don\'t adapt",
       color: "from-blue-500 to-cyan-500"
     },
     {
@@ -124,7 +124,7 @@ export default function Home() {
                 Why Johnny
               </span>
               <br />
-              <span className="text-white">Can't Use</span>
+              <span className="text-lime-400">Can't Use</span>
               <br />
               <span className="bg-gradient-to-r from-pink-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent animate-gradient-x">
                 Agents
@@ -651,9 +651,9 @@ export default function Home() {
           <p className="text-gray-400 mb-4">
             © 2025 Carnegie Mellon University. All rights reserved.
           </p>
-          <p className="text-sm text-gray-500">
-            This research was funded in part by the National Science Foundation under award #2316768.
-          </p>
+            <p className="text-sm text-gray-500">
+              This research was funded in part by the National Science Foundation under award #2316768.
+            </p>
         </div>
       </footer>
 
