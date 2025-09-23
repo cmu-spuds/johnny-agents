@@ -1,13 +1,15 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Download, ChevronDown, ArrowRight, ArrowDown, Zap, AlertTriangle, MessageCircle, Settings, Brain, Copy, Check } from 'lucide-react';
+import { Download, ChevronDown, ArrowRight, ArrowDown, Zap, AlertTriangle, MessageCircle, Settings, Brain, Copy, Check, Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import { getAssetPath } from '@/utils/basePath';
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const [copied, setCopied] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [flippedCards, setFlippedCards] = useState<number[]>([]);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -32,36 +34,54 @@ export default function Home() {
     }
   };
 
+  const toggleCardFlip = (index: number) => {
+    setFlippedCards(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    );
+  };
+
   const barriers = [
     {
       icon: <Brain className="w-6 h-6" />,
       title: "Misaligned Mental Models",
       description: "Agent capabilities don\'t match user expectations",
-      color: "from-purple-500 to-pink-500"
+      color: "from-purple-500 to-pink-500",
+      quote: "You've got to sit there and make sure that your initial prompt is perfect.",
+      explanation: "This high-stakes approach to communication is caused by Misaligned Mental Models. Users can't predict the agent's actual capabilities, turning delegation into frustrating prompt \"gambling\"."
     },
     {
       icon: <AlertTriangle className="w-6 h-6" />,
       title: "Presuming Trust",
       description: "Without demonstrating competence or security",
-      color: "from-orange-500 to-red-500"
+      color: "from-orange-500 to-red-500",
+      quote: "I was waiting for it to ask me for some more information.",
+      explanation: "Agents operate on Presumed Trust. They expect immediate delegation without first establishing credibility through active preference-elicitation or demonstrating the competence necessary to handle sensitive tasks."
     },
     {
       icon: <Settings className="w-6 h-6" />,
       title: "Inflexible Collaboration",
       description: "Rigid interaction styles that don\'t adapt",
-      color: "from-blue-500 to-cyan-500"
+      color: "from-blue-500 to-cyan-500",
+      quote: "It's kind of like I'm giving you a job, and you're throwing the job back at me.",
+      explanation: "Agents enforce Inflexible Collaboration. They act as \"lone wolf\" execution tools that fail to adapt to a user's need for hands-on guidance or mid-task oversight."
     },
     {
       icon: <MessageCircle className="w-6 h-6" />,
       title: "Communication Overhead",
       description: "Overwhelming users with excessive output",
-      color: "from-green-500 to-teal-500"
+      color: "from-green-500 to-teal-500",
+      quote: "Oh, my God! It threw out so much stuff...it's almost an overwhelming amount of information.",
+      explanation: "Users are buried under Communication Overload. This arises from agents generating excessive, poorly-formatted output and forcing users to articulate complex, subjective preferences in a cognitively demanding way."
     },
     {
       icon: <Zap className="w-6 h-6" />,
       title: "Metacognitive Gaps",
       description: "Agents lack self-awareness of limitations",
-      color: "from-yellow-500 to-orange-500"
+      color: "from-yellow-500 to-orange-500",
+      quote: "It just was kind of circling...it's seeking to provide an answer rather than to say 'I don't know.'",
+      explanation: "Agents suffer from Metacognitive Gaps. They lack the self-awareness to recognize their own errors or limitations, leading them to get stuck in time-wasting \"try-fail cycles\" that require manual human debugging."
     }
   ];
 
@@ -104,13 +124,64 @@ export default function Home() {
           <a href="#hero" className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
             Why Johnny Can&apos;t Use Agents
           </a>
-          <div className="flex items-center gap-6">
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-6">
             <a href="#team" className="hover:text-cyan-400 transition-colors">Team</a>
             <a href="#methodology" className="hover:text-cyan-400 transition-colors">Methodology</a>
             <a href="#findings" className="hover:text-cyan-400 transition-colors">Findings</a>
             <a href="#recommendations" className="hover:text-cyan-400 transition-colors">Recommendations</a>
           </div>
+
+          {/* Mobile Hamburger Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
+            aria-label="Toggle mobile menu"
+          >
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6 text-white" />
+            ) : (
+              <Menu className="w-6 h-6 text-white" />
+            )}
+          </button>
         </div>
+
+        {/* Mobile Dropdown Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-black/90 backdrop-blur-xl border-t border-white/10">
+            <div className="px-6 py-4 space-y-4">
+              <a 
+                href="#team" 
+                className="block py-2 text-white hover:text-cyan-400 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Team
+              </a>
+              <a 
+                href="#methodology" 
+                className="block py-2 text-white hover:text-cyan-400 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Methodology
+              </a>
+              <a 
+                href="#findings" 
+                className="block py-2 text-white hover:text-cyan-400 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Findings
+              </a>
+              <a 
+                href="#recommendations" 
+                className="block py-2 text-white hover:text-cyan-400 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Recommendations
+              </a>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
@@ -494,29 +565,62 @@ export default function Home() {
           {/* Critical Usability Barriers */}
           <div className="mb-32">
             <h3 className="text-3xl font-bold mb-8 text-center text-white">Usability Barriers</h3>
+            <p className="text-center text-gray-400 mb-8">Click on any card to reveal user quotes and detailed explanations</p>
             <div className="space-y-6">
-              {barriers.map((barrier, index) => (
-                <div key={index} className="group">
-                  <div className={`bg-gradient-to-r ${barrier.color} p-1 rounded-2xl opacity-80 hover:opacity-100 transition-opacity duration-300`}>
-                    <div className="bg-black/90 rounded-2xl p-8 flex items-center gap-6">
-                      <div className="flex-shrink-0">
-                        <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${barrier.color} flex items-center justify-center text-white`}>
-                          {barrier.icon}
+              {barriers.map((barrier, index) => {
+                const isFlipped = flippedCards.includes(index);
+                return (
+                  <div key={index} className="group perspective-1000">
+                    <div 
+                      className={`relative w-full min-h-[300px] md:min-h-[300px] min-h-[400px] transform-style-preserve-3d transition-transform duration-700 cursor-pointer ${
+                        isFlipped ? 'rotate-y-180' : ''
+                      }`}
+                      onClick={() => toggleCardFlip(index)}
+                    >
+                      {/* Front of card */}
+                      <div className={`absolute inset-0 bg-gradient-to-r ${barrier.color} p-1 rounded-2xl opacity-80 hover:opacity-100 transition-opacity duration-300 backface-hidden`}>
+                        <div className="bg-black/90 rounded-2xl p-8 h-full flex items-center gap-6">
+                          <div className="flex-shrink-0">
+                            <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${barrier.color} flex items-center justify-center text-white`}>
+                              {barrier.icon}
+                            </div>
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-2xl font-bold mb-2 text-white">
+                              {barrier.title}
+                            </h3>
+                            <p className="text-gray-300 text-lg">
+                              {barrier.description}
+                            </p>
+                          </div>
+                          <ArrowRight className="w-6 h-6 text-white/60 group-hover:text-white group-hover:translate-x-2 transition-all duration-300" />
                         </div>
                       </div>
-                      <div className="flex-1">
-                        <h3 className="text-2xl font-bold mb-2 text-white">
-                          {barrier.title}
-                        </h3>
-                        <p className="text-gray-300 text-lg">
-                          {barrier.description}
-                        </p>
+
+                      {/* Back of card */}
+                      <div className={`absolute inset-0 bg-gradient-to-r ${barrier.color} p-1 rounded-2xl opacity-80 hover:opacity-100 transition-opacity duration-300 backface-hidden rotate-y-180`}>
+                        <div className="bg-black/90 rounded-2xl p-4 md:p-8 h-full flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+                          {/* Column 1: User Quote */}
+                          <div className="flex-1">
+                            <h4 className="text-base md:text-2xl font-semibold text-cyan-400 mb-2 md:mb-4">User Quote:</h4>
+                            <blockquote className="text-gray-200 text-sm md:text-xl italic leading-relaxed border-l-4 border-cyan-400 pl-3 md:pl-6">
+                              "{barrier.quote}"
+                            </blockquote>
+                          </div>
+                          
+                          {/* Column 2: Explanation */}
+                          <div className="flex-1">
+                            <h4 className="text-base md:text-2xl font-semibold text-purple-400 mb-2 md:mb-4">Explanation:</h4>
+                            <p className="text-gray-300 text-sm md:text-xl leading-relaxed">
+                              {barrier.explanation}
+                            </p>
+                          </div>
+                        </div>
                       </div>
-                      <ArrowRight className="w-6 h-6 text-white/60 group-hover:text-white group-hover:translate-x-2 transition-all duration-300" />
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
@@ -666,6 +770,18 @@ export default function Home() {
         .animate-gradient-x {
           background-size: 200% 200%;
           animation: gradient-x 3s ease infinite;
+        }
+        .perspective-1000 {
+          perspective: 1000px;
+        }
+        .transform-style-preserve-3d {
+          transform-style: preserve-3d;
+        }
+        .backface-hidden {
+          backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+          transform: rotateY(180deg);
         }
       `}</style>
     </div>
