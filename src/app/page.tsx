@@ -604,7 +604,7 @@ export default function Home() {
                           <div className="flex-1">
                             <h4 className="text-base md:text-2xl font-semibold text-cyan-400 mb-2 md:mb-4">User Quote:</h4>
                             <blockquote className="text-gray-200 text-sm md:text-xl italic leading-relaxed border-l-4 border-cyan-400 pl-3 md:pl-6">
-                              "{barrier.quote}"
+                              &ldquo;{barrier.quote}&rdquo;
                             </blockquote>
                           </div>
                           
