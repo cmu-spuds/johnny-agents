@@ -49,7 +49,7 @@ export default function Home() {
       description: "Agent capabilities don\'t match user expectations",
       color: "from-purple-500 to-pink-500",
       quote: "You've got to sit there and make sure that your initial prompt is perfect.",
-      explanation: "This high-stakes approach to communication is caused by Misaligned Mental Models. Users can't predict the agent's actual capabilities, turning delegation into frustrating prompt \"gambling\"."
+      explanation: "Users can't predict the agent's actual capabilities, turning delegation into frustrating \"prompt gambling\"."
     },
     {
       icon: <AlertTriangle className="w-6 h-6" />,
@@ -57,7 +57,7 @@ export default function Home() {
       description: "Without demonstrating competence or security",
       color: "from-orange-500 to-red-500",
       quote: "I was waiting for it to ask me for some more information.",
-      explanation: "Agents operate on Presumed Trust. They expect immediate delegation without first establishing credibility through active preference-elicitation or demonstrating the competence necessary to handle sensitive tasks."
+      explanation: "Agents expect immediate delegation without first establishing credibility through active preference-elicitation or demonstrating the competence necessary to handle sensitive tasks."
     },
     {
       icon: <Settings className="w-6 h-6" />,
@@ -65,7 +65,7 @@ export default function Home() {
       description: "Rigid interaction styles that don\'t adapt",
       color: "from-blue-500 to-cyan-500",
       quote: "It's kind of like I'm giving you a job, and you're throwing the job back at me.",
-      explanation: "Agents enforce Inflexible Collaboration. They act as \"lone wolf\" execution tools that fail to adapt to a user's need for hands-on guidance or mid-task oversight."
+      explanation: "They act as \"lone wolf\" execution tools that fail to adapt to a user's need for hands-on guidance or mid-task oversight."
     },
     {
       icon: <MessageCircle className="w-6 h-6" />,
@@ -73,7 +73,7 @@ export default function Home() {
       description: "Overwhelming users with excessive output",
       color: "from-green-500 to-teal-500",
       quote: "Oh, my God! It threw out so much stuff...it's almost an overwhelming amount of information.",
-      explanation: "Users are buried under Communication Overload. This arises from agents generating excessive, poorly-formatted output and forcing users to articulate complex, subjective preferences in a cognitively demanding way."
+      explanation: "This arises from agents generating excessive, poorly-formatted output and forcing users to articulate complex, subjective preferences in a cognitively demanding way."
     },
     {
       icon: <Zap className="w-6 h-6" />,
@@ -81,7 +81,7 @@ export default function Home() {
       description: "Agents lack self-awareness of limitations",
       color: "from-yellow-500 to-orange-500",
       quote: "It just was kind of circling...it's seeking to provide an answer rather than to say 'I don't know.'",
-      explanation: "Agents suffer from Metacognitive Gaps. They lack the self-awareness to recognize their own errors or limitations, leading them to get stuck in time-wasting \"try-fail cycles\" that require manual human debugging."
+      explanation: "They lack the self-awareness to recognize their own errors or limitations, leading them to get stuck in time-wasting \"try-fail cycles\" that require manual human debugging."
     }
   ];
 
@@ -102,7 +102,7 @@ export default function Home() {
     },
     {
       title: "Insight",
-      description: "Transform unstructured information into digestible insights", 
+      description: "Distill knowledge into structured takeaways", 
       count: "98 agents",
       examples: "Perplexity, Spotify AI DJ",
       gradient: "from-orange-600 to-pink-600"
@@ -228,18 +228,18 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto text-center">
-            <div className="p-6 rounded-2xl bg-white/5 backdrop-blur border border-white/10">
+            <a href="#taxonomy" className="p-6 rounded-2xl bg-white/5 backdrop-blur border border-white/10 hover:bg-white/10 transition-all duration-300 cursor-pointer">
               <div className="text-3xl font-bold text-cyan-400">102</div>
               <div className="text-gray-400">AI Agents Analyzed</div>
-            </div>
-            <div className="p-6 rounded-2xl bg-white/5 backdrop-blur border border-white/10">
+            </a>
+            <a href="#methodology" className="p-6 rounded-2xl bg-white/5 backdrop-blur border border-white/10 hover:bg-white/10 transition-all duration-300 cursor-pointer">
               <div className="text-3xl font-bold text-purple-400">31</div>
               <div className="text-gray-400">User Study Participants</div>
-            </div>
-            <div className="p-6 rounded-2xl bg-white/5 backdrop-blur border border-white/10">
+            </a>
+            <a href="#barriers" className="p-6 rounded-2xl bg-white/5 backdrop-blur border border-white/10 hover:bg-white/10 transition-all duration-300 cursor-pointer">
               <div className="text-3xl font-bold text-pink-400">5</div>
               <div className="text-gray-400">Critical Barriers Found</div>
-            </div>
+            </a>
           </div>
         </div>
 
@@ -389,7 +389,7 @@ export default function Home() {
           </h2>
           
           {/* AI Agent Taxonomy */}
-          <div className="mb-20">
+          <div id="taxonomy" className="mb-20">
             <h3 className="text-3xl font-bold mb-8 text-center text-white">AI Agent Taxonomy</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {taxonomy.map((category, index) => (
@@ -563,7 +563,7 @@ export default function Home() {
           </div>
 
           {/* Critical Usability Barriers */}
-          <div className="mb-32">
+          <div id="barriers" className="mb-32">
             <h3 className="text-3xl font-bold mb-8 text-center text-white">Usability Barriers</h3>
             <p className="text-center text-gray-400 mb-8">Click on any card to reveal user quotes and detailed explanations</p>
             <div className="space-y-6">
@@ -599,21 +599,28 @@ export default function Home() {
 
                       {/* Back of card */}
                       <div className={`absolute inset-0 bg-gradient-to-r ${barrier.color} p-1 rounded-2xl opacity-80 hover:opacity-100 transition-opacity duration-300 backface-hidden rotate-y-180`}>
-                        <div className="bg-black/90 rounded-2xl p-4 md:p-8 h-full flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
-                          {/* Column 1: User Quote */}
-                          <div className="flex-1">
-                            <h4 className="text-base md:text-2xl font-semibold text-cyan-400 mb-2 md:mb-4">User Quote:</h4>
-                            <blockquote className="text-gray-200 text-sm md:text-xl italic leading-relaxed border-l-4 border-cyan-400 pl-3 md:pl-6">
-                              &ldquo;{barrier.quote}&rdquo;
-                            </blockquote>
+                        <div className="bg-black/90 rounded-2xl p-4 md:p-8 h-full flex flex-col">
+                          {/* Barrier Title at top-left */}
+                          <div className="mb-4">
+                            <h3 className="text-xl md:text-2xl font-bold text-white">{barrier.title}</h3>
                           </div>
                           
-                          {/* Column 2: Explanation */}
-                          <div className="flex-1">
-                            <h4 className="text-base md:text-2xl font-semibold text-purple-400 mb-2 md:mb-4">Explanation:</h4>
-                            <p className="text-gray-300 text-sm md:text-xl leading-relaxed">
-                              {barrier.explanation}
-                            </p>
+                          <div className="flex flex-col md:flex-row items-start gap-4 md:gap-8 flex-1">
+                            {/* Column 1: User Quote */}
+                            <div className="flex-1">
+                              <h4 className="text-base md:text-2xl font-semibold text-cyan-400 mb-2 md:mb-4">Example User Quote:</h4>
+                              <blockquote className="text-gray-200 text-sm md:text-xl italic leading-relaxed border-l-4 border-cyan-400 pl-3 md:pl-6">
+                                &ldquo;{barrier.quote}&rdquo;
+                              </blockquote>
+                            </div>
+                            
+                            {/* Column 2: Explanation */}
+                            <div className="flex-1">
+                              <h4 className="text-base md:text-2xl font-semibold text-purple-400 mb-2 md:mb-4">Explanation:</h4>
+                              <p className="text-gray-300 text-sm md:text-xl leading-relaxed">
+                                {barrier.explanation}
+                              </p>
+                            </div>
                           </div>
                         </div>
                       </div>
