@@ -89,21 +89,21 @@ export default function Home() {
     {
       title: "Orchestration",
       description: "Agents that act on behalf of users to manipulate software interfaces",
-      count: "54 agents",
+      count: "31 agents",
       examples: "Salesforce Agentforce, Copilot",
       gradient: "from-indigo-600 to-purple-600"
     },
     {
       title: "Creation", 
       description: "Generate structured documents with well-defined formats",
-      count: "34 agents",
+      count: "33 agents",
       examples: "Lovable, Gamma, Beautiful.AI",
       gradient: "from-emerald-600 to-teal-600"
     },
     {
       title: "Insight",
       description: "Distill knowledge into structured takeaways", 
-      count: "98 agents",
+      count: "87 agents",
       examples: "Perplexity, Spotify AI DJ",
       gradient: "from-orange-600 to-pink-600"
     }
@@ -131,6 +131,7 @@ export default function Home() {
             <a href="#methodology" className="hover:text-cyan-400 transition-colors">Methodology</a>
             <a href="#findings" className="hover:text-cyan-400 transition-colors">Findings</a>
             <a href="#recommendations" className="hover:text-cyan-400 transition-colors">Recommendations</a>
+            <a href="#citation" className="hover:text-cyan-400 transition-colors">Citation</a>
           </div>
 
           {/* Mobile Hamburger Button */}
@@ -178,6 +179,13 @@ export default function Home() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Recommendations
+              </a>
+              <a 
+                href="#citation" 
+                className="block py-2 text-white hover:text-cyan-400 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Citation
               </a>
             </div>
           </div>
@@ -241,10 +249,6 @@ export default function Home() {
               <div className="text-gray-400">Critical Barriers Found</div>
             </a>
           </div>
-        </div>
-
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="w-8 h-8 text-white/60" />
         </div>
       </section>
 
@@ -726,7 +730,7 @@ export default function Home() {
       {/* Removed Study Design Section */}
 
       {/* Citation Section */}
-      <section className="py-20 px-6">
+      <section id="citation" className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
             Citation
